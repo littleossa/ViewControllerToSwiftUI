@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func presentSwiftUIView() {
+        let controller = SwiftUIViewHostingController(viewModel: SwiftUIViewModel())
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true)
+    }
 }
-
